@@ -10,10 +10,10 @@ class Produto(models.Model):
     estoque_minimo = models.PositiveIntegerField('estoque mínimo', default=0)
 
     class Meta:
-        ordering = ('produto',  )
+        ordering = ('produto',)
 
     def __str__(self):
-        return self.produto
+        return self.produto 
     
     def get_absolute_url(self):
         return reverse_lazy('produto:produto_detail', kwargs={'pk': self.pk})

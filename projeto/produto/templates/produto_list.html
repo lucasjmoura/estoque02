@@ -3,8 +3,16 @@
 
 {% block content %}
 
-  <div class= "page-header"
-    <h2><i class=" fa fa-beer fa-2x"></i> Lista de Produtos</h2>
+  <div class= "page-header">
+    <h2>Lista de Produtos
+      <span class="pull-right">
+        <a href="{%url 'produto:produto_add' %}">
+          <button type="button" class="btn btn-primary">
+            <span class = "fa fa-plus"></span>Adicionar
+          </button>
+        </a>
+      </span>
+    </h2>
     
     {% if object_list %}
     
@@ -37,7 +45,7 @@
               <td class="text-center">{{object.estoque}}</td>
               <td class="text-center">{{object.estoque_minimo}}</td>
             </tr>
-          {%endfor%}
+          {%endfor%}  
         </body>
     </table>
   {%else%}
